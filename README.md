@@ -1,4 +1,5 @@
-This code is an implementation of the paper "GINN-LP: A Growing Interpretable Neural Network for Discovering Multivariate Laurent Polynomial Equations".
+This code is an implementation of the AAAI 2024 paper "GINN-LP: A Growing Interpretable Neural Network for Discovering Multivariate Laurent Polynomial Equations".
+[ArXiv](https://arxiv.org/abs/2312.10913)
 
 # Quick Start
 
@@ -26,3 +27,13 @@ Once the model is trained, the recovered mathematical equation can be viewed by,
     print(est.recovered_eq)
     
 Here, the recovered_eq variable contains a SymPy expression.
+
+# Citation
+If our work is useful, please consider citing:
+
+@article{ranasinghe2023ginn,
+  title={GINN-LP: A Growing Interpretable Neural Network for Discovering Multivariate Laurent Polynomial Equations},
+  author={Ranasinghe, Nisal and Senanayake, Damith and Seneviratne, Sachith and Premaratne, Malin and Halgamuge, Saman},
+  journal={arXiv preprint arXiv:2312.10913},
+  year={2023}
+}
