@@ -1,13 +1,10 @@
-from symnn.de_learn_network import log_activation, \
+from ginnlp.de_learn_network import log_activation, \
     eql_model_v2, add_ln_block, set_model_l1_l2, L1L2_m, \
     eql_model_v3, add_depth_ln_layer, add_width_ln_block, \
     eql_opt, copy_tf_model
-from symnn.utils import eq_complexity, get_sympy_expr_v2
+from ginnlp.utils import eq_complexity, get_sympy_expr_v2
 import tensorflow as tf
-from tensorflow.keras import optimizers
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
-import numpy as np
 
 
 def preprocess_data(train_x, train_y=None, is_train=True, val_split=0.2):

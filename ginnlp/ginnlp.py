@@ -1,4 +1,4 @@
-from symnn.train_model import preprocess_data, select_best_model
+from ginnlp.train_model import preprocess_data, select_best_model
 from sklearn.base import BaseEstimator, RegressorMixin
 from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
 import numpy as np

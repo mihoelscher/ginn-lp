@@ -4,7 +4,6 @@ from tensorflow.keras.regularizers import Regularizer
 
 import tensorflow as tf
 from tensorflow.keras import backend as K
-from symnn.utils import get_sympy_expr_v3
 
 import numpy as np
 
