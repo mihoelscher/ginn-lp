@@ -34,6 +34,43 @@ Below, we outline the steps to discover the Coulomb's law equation using GINN-LP
     ```
 Here, the data file should be a csv or tsv with any number of feature columns and a target column. The target column should be named as "target".
 
+## Scikit-learn compatible API
+
+We also provide a scikit-learn compatible API for GINN-LP. The GINN-LP package should first be installed using pip.
+
+``` 
+pip install -U ./ginn-lp
+ ```
+
+After installing the package, you can use the scikit-learn compatible API to fit the model and generate output predictions. The default hyperparameters are listed below.Here, train_x should be a pandas dataframe object or numpy array containing input features. train_y should be a pandas series, dataframe or a numpy array containing target values.
+
+```python
+from ginnlp.ginnlp import GINNLP
+import pandas as pd
+
+train_df = pd.read_csv("data/feynman_I_12_2.csv")
+train_x = train_df.drop(columns=["target"])
+train_y = train_df["target"]
+
+est = GINNLP(reg_change=0.5,
+        start_ln_blocks=1,
+        growth_steps=3,
+        l1_reg=1e-4,
+        l2_reg=1e-4,
+        num_epochs=500,
+        round_digits=3,
+        train_iter=4)
+est.fit(train_x, train_y)
+```
+
+Once the model is trained, the discovered mathematical equation can be viewed.
+
+```python
+print(est.recovered_eq)
+```
+
+Here, the recovered_eq variable contains a SymPy expression.
+
 ## Citation
 If our work is useful, please consider citing:
 
