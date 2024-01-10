@@ -1,13 +1,11 @@
-from symnn.train_model import train_model_growth_v3, preprocess_data, train_model_growth, select_best_model
-from symnn.utils import get_sympy_expr_v3, get_sympy_expr_v2
+from symnn.train_model import preprocess_data, select_best_model
 from sklearn.base import BaseEstimator, RegressorMixin
 from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
-from sklearn.utils.estimator_checks import check_estimator
 import numpy as np
 import pandas as pd
 
 
-class SymNN(BaseEstimator, RegressorMixin):
+class GINNLP(BaseEstimator, RegressorMixin):
 
     # def __init__(self, max_ln_blocks, max_line_blocks, reg_change=0.3,
     #              l1_reg=0.1, l2_reg=0.01, num_epochs=200,
@@ -82,7 +80,7 @@ if __name__ == '__main__':
     train_y = df['target'].values
     # model = SymNN(num_epochs=500
     #               , round_digits=2, max_ln_blocks=[2, 1], max_line_blocks=[1, 1], l1_reg=0, l2_reg=0)
-    model = SymNN(num_epochs=500, round_digits=3, start_ln_blocks=1, growth_steps=3, l1_reg=1e-4, l2_reg=1e-4,
+    model = GINNLP(num_epochs=500, round_digits=3, start_ln_blocks=1, growth_steps=3, l1_reg=1e-4, l2_reg=1e-4,
                   init_lr=0.01, decay_steps=1000, reg_change=0.5)
     model.fit(train_x, train_y)
     # print(model.predict([[1, 2]]))
