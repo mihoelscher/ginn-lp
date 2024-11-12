@@ -4,6 +4,8 @@ from sklearn.utils.validation import check_X_y, check_array, check_is_fitted
 import numpy as np
 import pandas as pd
 
+# from trainingOnSyntheticData.train import train
+
 
 class GINNLP(BaseEstimator, RegressorMixin):
 
@@ -72,7 +74,7 @@ class GINNLP(BaseEstimator, RegressorMixin):
 
 
 if __name__ == '__main__':
-    data_file = '../data/feynman_I_24_6.tsv'
+    data_file = 'C:\\thesis\\ginn-lp\\data\\feynman_I_12_2.tsv'
     df = pd.read_csv(data_file, sep='\t')
     print(df.shape)
     df = df.sample(10000)
@@ -81,7 +83,7 @@ if __name__ == '__main__':
     # model = SymNN(num_epochs=500
     #               , round_digits=2, max_ln_blocks=[2, 1], max_line_blocks=[1, 1], l1_reg=0, l2_reg=0)
     model = GINNLP(num_epochs=500, round_digits=3, start_ln_blocks=1, growth_steps=3, l1_reg=1e-4, l2_reg=1e-4,
-                  init_lr=0.01, decay_steps=1000, reg_change=0.5)
+                  init_lr=0.01, decay_steps=1000, reg_change=0.5, train_iter=1),
     model.fit(train_x, train_y)
     # print(model.predict([[1, 2]]))
     print(model.recovered_eq)

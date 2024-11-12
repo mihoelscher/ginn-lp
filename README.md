@@ -30,7 +30,7 @@ Below, we outline the steps to discover the Coulomb's law equation using GINN-LP
    
 2. Run the code
     ```bash
-   python run.py --data data/feynman_I_12_2 --format tsv
+   python run.py --data C:\thesis\ginn-lp\data\feynman_I_12_2.tsv --format tsv
     ```
 Here, the data file should be a csv or tsv with any number of feature columns and a target column. The target column should be named as "target".
 
